@@ -1,3 +1,3 @@
 # DirectMessage
 
-![Message](./img/DirectMessage.png)
+![Message](./img/DirectMessage.png){: width="500" height="500"}
