@@ -51,20 +51,50 @@ class ChattingActivity : AppCompatActivity() {
         binding.friendName.text = friend.name // 채팅방 이름 설정
 
         binding.sendMessage.setOnClickListener { // 메세지 보내기 버튼 클릭 시
+            // 데이터베이스 상에서
+            // chat -> 현재유저 uid -> 상대유저 uid -> 필드저장(Chat)
+            // chat -> 상대유저 uid -> 현재유저 uid -> 필드저장(Chat)
+            // 둘다 업데이트 해줘야 함 (양방향 통신을 위해서)
             val content = binding.messageText.text.toString()
-            val chat = Chat(content, userName,0)
-            db.collection("chat")
-                .document(auth.currentUser!!.uid)
-                .collection(friend.UID)
-                .document(com.google.firebase.Timestamp.now().toString())
-                .set(chat)
-            binding.messageText.setText("")
-            getChatList()
-        }
 
+            if(content != "") {
+                var chat = Chat(content, userName, 0)
+                db.collection("chat")
+                    .document(auth.currentUser!!.uid)
+                    .collection(friend.UID)
+                    .document(com.google.firebase.Timestamp.now().toString())
+                    .set(chat)
+
+                chat = Chat(content, userName, 1)
+                db.collection("chat")
+                    .document(friend.UID)
+                    .collection(auth.currentUser!!.uid)
+                    .document(com.google.firebase.Timestamp.now().toString())
+                    .set(chat)
+
+                binding.messageText.setText("")
+            }
+        }
         // 채팅 리스트 가져오기 + 리사이클러 뷰 어답터 적용
         getChatList()
+        db.collection("chat")
+            .document(auth.currentUser!!.uid)
+            .collection(friend.UID)
+            .addSnapshotListener { snapshot, e ->
+                if (e != null) {
+                    Log.w("testt", "Listen failed.", e)
+                    return@addSnapshotListener
+                }
+
+                if (snapshot!!.metadata.isFromCache) return@addSnapshotListener
+
+                Log.d("testt", "done")
+                getChatList()
+            }
+
+
     }
+
 
     fun getChatList(){
         chatList.clear()
@@ -76,19 +106,21 @@ class ChattingActivity : AppCompatActivity() {
                 it.forEach {
                     val content = it["content"].toString()
                     val name = it["name"].toString()
-                    val chat = Chat(content, name,0) // multiType:0 -> 내가 보낸 메세지
+                    val type = it["multiType"].toString().toInt()
+
+                    val chat = Chat(content, name, type) // multiType:0 -> 내가 보낸 메세지
 
                     chatList.add(chat)
                 }
                 // 어답터 적용
                 adapter = ChatAdapter(chatList, LayoutInflater.from(this), this)
                 binding.chatRecyclerview.adapter = adapter
-
+                binding.chatRecyclerview.scrollToPosition(chatList.size-1)
             }
     }
+
+
 }
-
-
 
 class Chat(
     val content: String,
@@ -130,7 +162,7 @@ class ChatAdapter(
                 myChatViewHolder(inflater.inflate(R.layout.chat_content_me, parent, false))
             }
             else->{ // 친구의 메세지
-                myChatViewHolder(inflater.inflate(R.layout.chat_content_friend, parent, false))
+                friendChatViewHolder(inflater.inflate(R.layout.chat_content_friend, parent, false))
             }
         }
     }
