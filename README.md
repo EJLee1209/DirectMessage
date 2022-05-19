@@ -1,3 +1,3 @@
 # DirectMessage
 
-![Message](./img/DirectMessage.png){: width="500" height="500"}
+<img src="/img/DirectMessage.png" width="300" height="300">
