@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/background.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/btn_login.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/chat_friend.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/chat_me.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/chat_windo.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/chat_window.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/drawable/id_input.xml" value="0.2945" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/activity_chatting.xml" value="0.16" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/activity_register.xml" value="0.3515625" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/activity_splash.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/chat_content_friend.xml" value="0.25" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/chat_content_me.xml" value="0.25" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/fragment_chat.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/fragment_friend_add.xml" value="0.3515625" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/fragment_friend_list.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/dldms/Desktop/Project_Chat/app/src/main/res/layout/friends_list.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
