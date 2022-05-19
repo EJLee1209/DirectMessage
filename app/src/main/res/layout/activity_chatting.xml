@@ -36,6 +36,8 @@
             android:layout_weight="1"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
+            android:textColor="@color/white"
+            android:padding="5dp"
             android:background="@drawable/chat_window"/>
 
         <ImageView
