@@ -1,3 +1,3 @@
 # DirectMessage
 
-<img src="/img/DirectMessage.png" width="300" height="300">
+<img src="/img/DirectMessage.png" width="300" height="600">
