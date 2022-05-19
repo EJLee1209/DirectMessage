@@ -64,7 +64,6 @@ class ChattingActivity : AppCompatActivity() {
                     .collection(friend.UID)
                     .document(com.google.firebase.Timestamp.now().toString())
                     .set(chat)
-
                 chat = Chat(content, userName, 1)
                 db.collection("chat")
                     .document(friend.UID)
